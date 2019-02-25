@@ -1,5 +1,5 @@
 //
-//  MMULT1.h
+//  MMULT2.h
 //  sysc-4001-assignment-1
 //
 //  Created by Kyle Horne on 2019-02-25.
