@@ -6,8 +6,8 @@
 //  Copyright © 2019 Kyle Horne. All rights reserved.
 //
 
-#ifndef MMULT1_h
-#define MMULT1_h
+#ifndef MMULT2_h
+#define MMULT2_h
 
 #define ROWS 4
 #define COLS 4
@@ -20,4 +20,4 @@ struct shared_matrices {
     int row_id;
 };
 
-#endif /* MMULT1_h */
+#endif /* MMULT2_h */
