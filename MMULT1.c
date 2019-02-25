@@ -21,6 +21,7 @@ void matrix_mul(struct shared_matrices *shared_matrices) {
     shared_matrices->row_id++;
     printf("Child Process: working with row: %d\n", row + 1);
     int sum = 0;
+    /* Compute matrix mul of row id. */
     for (int k = 0 ; k < COLS; k++) {
         for (int j = 0; j < ROWS; j++) {
             sum += shared_matrices->m[row][j] * shared_matrices->n[j][k];
@@ -67,6 +68,7 @@ int main(int argc, const char * argv[]) {
         }
     }
     
+    /* Fork n processes. */
     int n_processes = N_PROCESSES;
     for(int i = 0; i < n_processes; i++) {
         pid_t pid = fork();
@@ -82,6 +84,7 @@ int main(int argc, const char * argv[]) {
         }
     }
     
+    /* Await child processes to exit. */
     int status;
     pid_t pid;
     while (n_processes > 0) {
@@ -89,6 +92,7 @@ int main(int argc, const char * argv[]) {
         --n_processes;
     }
     
+    /* Print matrix q. */
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0 ; j < COLS; j++) {
             printf("%d\t", shared_matrices->q[i][j]);
