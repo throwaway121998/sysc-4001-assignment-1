@@ -79,7 +79,23 @@ int main(int argc, const char * argv[]) {
             shared_matrices->n[i][k] = n[i] [k];
         }
     }
-
+    /* Print matrix m. */
+    printf("Matrix m:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0 ; j < COLS; j++) {
+            printf("%d\t", shared_matrices->m[i][j]);
+        }
+        printf("\n");
+    }
+    /* Print matrix n. */
+    printf("Matrix n:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0 ; j < COLS; j++) {
+            printf("%d\t", shared_matrices->n[i][j]);
+        }
+        printf("\n");
+    }
+    
     printf("Enter the number of child processes to fork: ");
     /* Fork n processes. */
     int n_processes;
