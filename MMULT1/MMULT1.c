@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
     int shmid;
     
     srand((unsigned int)getpid());
-
+    
     shmid = shmget((key_t)1234, sizeof(struct shared_matrices), 0666 | IPC_CREAT);
     if (shmid == -1) {
         fprintf(stderr, "shmget failed\n");
@@ -60,7 +60,7 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < ROWS; i++) {
         for (int k = 0 ; k < COLS; k++) {
             shared_matrices->m[i][k] = m[i][k];
-            printf("%d\t", shared_matrices->m[i][j]);    
+            printf("%d\t", shared_matrices->m[i][k]);
         }
         printf("\n");
     }
@@ -69,7 +69,7 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < ROWS; i++) {
         for (int k = 0 ; k < COLS; k++) {
             shared_matrices->n[i][k] = n[i] [k];
-            printf("%d\t", shared_matrices->n[i][j]);
+            printf("%d\t", shared_matrices->n[i][k]);
         }
         printf("\n");
     }
@@ -105,7 +105,7 @@ int main(int argc, const char * argv[]) {
         }
         printf("\n");
     }
-
+    
     /* Detach and delete shared memory. */
     if (shmdt(shared_memory) == -1) {
         fprintf(stderr, "shmdt failed\n");
@@ -115,6 +115,6 @@ int main(int argc, const char * argv[]) {
         fprintf(stderr, "shmctl(IPC_RMID) failed\n");
         exit(EXIT_FAILURE);
     }
-
+    
     return 0;
 }
