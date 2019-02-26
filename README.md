@@ -2,7 +2,7 @@
 
 ## Usage
 
-Run the Makefile for both MMULT1 and MMULT1.
+Run the Makefile for both MMULT1 and MMULT2.
 
 ## Discussion 
 
