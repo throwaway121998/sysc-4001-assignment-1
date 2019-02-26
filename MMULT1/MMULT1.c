@@ -16,17 +16,15 @@
 
 #include "MMULT1.h"
 
-void matrix_mul(struct shared_matrices *shared_matrices) {
-    int row = shared_matrices->row_id;
-    shared_matrices->row_id++;
-    printf("Child Process: working with row: %d\n", row + 1);
+void matrix_mul(struct shared_matrices *shared_matrices, int row_id) {
+    printf("Child Process: working with row: %d\n", row_id + 1);
     int sum = 0;
     /* Compute matrix mul of row id. */
     for (int k = 0 ; k < COLS; k++) {
         for (int j = 0; j < ROWS; j++) {
-            sum += shared_matrices->m[row][j] * shared_matrices->n[j][k];
+            sum += shared_matrices->m[row_id][j] * shared_matrices->n[j][k];
         }
-        shared_matrices->q[row][k] = sum;
+        shared_matrices->q[row_id][k] = sum;
         sum = 0;
     }
     exit(0);
@@ -83,7 +81,7 @@ int main(int argc, const char * argv[]) {
                 perror("fork failed");
                 exit(EXIT_FAILURE);
             case 0:
-                matrix_mul(shared_matrices);
+                matrix_mul(shared_matrices, i);
                 break;
             default:
                 break;
