@@ -22,7 +22,6 @@ Matrix n:
 7	3	5	7	
 8	6	4	2	
 Enter the number of child processes to fork: 1
-Child Process: working with row(s): 1 to 4
 Elapsed Time: for child process working with rows(s): 1 to 4: 18 mirco sec
 58	44	48	52	
 130	108	128	148	
@@ -42,9 +41,7 @@ Matrix n:
 7	3	5	7	
 8	6	4	2	
 Enter the number of child processes to fork: 2
-Child Process: working with row(s): 1 to 2
 Elapsed Time: for child process working with rows(s): 1 to 2: 19 mirco sec
-Child Process: working with row(s): 3 to 4
 Elapsed Time: for child process working with rows(s): 3 to 4: 11 mirco sec
 58	44	48	52	
 130	108	128	148	
@@ -64,13 +61,9 @@ Matrix n:
 7	3	5	7	
 8	6	4	2	
 Enter the number of child processes to fork: 4
-Child Process: working with row(s): 1 to 1
-Child Process: working with row(s): 2 to 2
 Elapsed Time: for child process working with rows(s): 1 to 1: 25 mirco sec
 Elapsed Time: for child process working with rows(s): 2 to 2: 11 mirco sec
-Child Process: working with row(s): 3 to 3
 Elapsed Time: for child process working with rows(s): 3 to 3: 14 mirco sec
-Child Process: working with row(s): 4 to 4
 Elapsed Time: for child process working with rows(s): 4 to 4: 11 mirco sec
 58	44	48	52	
 130	108	128	148	
@@ -91,7 +84,6 @@ Matrix n:
 9	8	7	6	
 5	4	3	2	
 Enter the number of child processes to fork: 1
-Child Process: working with row(s): 1 to 4
 Elapsed Time: for child process working with rows(s): 1 to 4: 15 mirco sec
 142	146	150	154	
 62	66	70	74	
@@ -111,9 +103,7 @@ Matrix n:
 9	8	7	6	
 5	4	3	2	
 Enter the number of child processes to fork: 2
-Child Process: working with row(s): 1 to 2
 Elapsed Time: for child process working with rows(s): 1 to 2: 54 mirco sec
-Child Process: working with row(s): 3 to 4
 Elapsed Time: for child process working with rows(s): 3 to 4: 15 mirco sec
 142	146	150	154	
 62	66	70	74	
@@ -133,13 +123,9 @@ Matrix n:
 9	8	7	6	
 5	4	3	2	
 Enter the number of child processes to fork: 4
-Child Process: working with row(s): 1 to 1
 Elapsed Time: for child process working with rows(s): 1 to 1: 19 mirco sec
-Child Process: working with row(s): 2 to 2
 Elapsed Time: for child process working with rows(s): 2 to 2: 14 mirco sec
-Child Process: working with row(s): 3 to 3
 Elapsed Time: for child process working with rows(s): 3 to 3: 13 mirco sec
-Child Process: working with row(s): 4 to 4
 Elapsed Time: for child process working with rows(s): 4 to 4: 10 mirco sec
 142	146	150	154	
 62	66	70	74	
