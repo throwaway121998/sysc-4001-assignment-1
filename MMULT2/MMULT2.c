@@ -18,15 +18,12 @@
 
 #define MICRO_SEC_IN_SEC 1000000
 
-void matrix_mul(struct shared_matrices *shared_matrices, int n_rows) {
+void matrix_mul(struct shared_matrices *shared_matrices, int row_id, int n_rows) {
     struct timeval start, end;
-    gettimeofday(&start, NULL);        /* Start timer. */
-    int row = shared_matrices->row_id; /* Start row for matrix mul. */
-    shared_matrices->row_id += n_rows; /* Next processes start row for matrix mul. */
-    printf("Child Process: working with row(s): %d to %d\n", row + 1, n_rows + row);
+    gettimeofday(&start, NULL); /* Start timer. */
     int sum = 0;
     /* Compute matrix mul of row id. */
-    for(int i = row; i < n_rows + row; i++) {
+    for(int i = row_id; i < row_id + n_rows + 1; i++) {
         for (int k = 0 ; k < COLS; k++) {
             for (int j = 0; j < ROWS; j++) {
                 sum += shared_matrices->m[i][j] * shared_matrices->n[j][k];
@@ -39,7 +36,7 @@ void matrix_mul(struct shared_matrices *shared_matrices, int n_rows) {
     /* Log result to standard out. */
     printf(
            "Elapsed Time: for child process working with rows(s): %d to %d: %ld mirco sec\n",
-           row + 1, n_rows + row,
+           row_id + 1, row_id + n_rows,
            (end.tv_sec * MICRO_SEC_IN_SEC + end.tv_usec) - (start.tv_sec * MICRO_SEC_IN_SEC + start.tv_usec));
     exit(0);
 }
@@ -112,7 +109,7 @@ int main(int argc, const char * argv[]) {
                 perror("fork failed");
                 exit(EXIT_FAILURE);
             case 0:
-                matrix_mul(shared_matrices, n_rows);
+                matrix_mul(shared_matrices, i, n_rows);
                 break;
             default:
                 break;
