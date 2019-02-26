@@ -56,16 +56,22 @@ int main(int argc, const char * argv[]) {
     
     /* Init matrix m and n in shared mem. */
     matrix m = {{1, 2, 3, 4}, {5, 6, 7, 8}, {4, 3, 2, 1}, {8, 7, 6, 5}};
+    printf("Matrix m:\n");
     for (int i = 0; i < ROWS; i++) {
         for (int k = 0 ; k < COLS; k++) {
             shared_matrices->m[i][k] = m[i][k];
+            printf("%d\t", shared_matrices->m[i][j]);    
         }
+        printf("\n");
     }
     matrix n = {{1, 3, 5, 7}, {2, 4, 6, 8}, {7, 3, 5, 7}, {8, 6, 4, 2}};
+    printf("Matrix n:\n");
     for (int i = 0; i < ROWS; i++) {
         for (int k = 0 ; k < COLS; k++) {
             shared_matrices->n[i][k] = n[i] [k];
+            printf("%d\t", shared_matrices->n[i][j]);
         }
+        printf("\n");
     }
     
     /* Fork n processes. */
