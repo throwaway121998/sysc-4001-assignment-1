@@ -17,7 +17,6 @@ struct shared_matrices {
     matrix m;
     matrix n;
     matrix q;
-    int row_id;
 };
 
 #endif /* MMULT2_h */
