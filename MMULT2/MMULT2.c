@@ -68,27 +68,15 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < ROWS; i++) {
         for (int k = 0 ; k < COLS; k++) {
             shared_matrices->m[i][k] = m[i][k];
+            printf("%d\t", shared_matrices->m[i][k]);
         }
+        printf("\n");
     }
     matrix n = {{1, 3, 5, 7}, {2, 4, 6, 8}, {7, 3, 5, 7}, {8, 6, 4, 2}};
     for (int i = 0; i < ROWS; i++) {
         for (int k = 0 ; k < COLS; k++) {
-            shared_matrices->n[i][k] = n[i] [k];
-        }
-    }
-    /* Print matrix m. */
-    printf("Matrix m:\n");
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0 ; j < COLS; j++) {
-            printf("%d\t", shared_matrices->m[i][j]);
-        }
-        printf("\n");
-    }
-    /* Print matrix n. */
-    printf("Matrix n:\n");
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0 ; j < COLS; j++) {
-            printf("%d\t", shared_matrices->n[i][j]);
+            shared_matrices->n[i][k] = n[i][k];
+            printf("%d\t", shared_matrices->n[i][k]);
         }
         printf("\n");
     }
