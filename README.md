@@ -6,7 +6,7 @@ Run the Makefile for both MMULT1 and MMULT1.
 
 ## Discussion 
 
-It is evident from the sample test that there is no benefit to executing a 4x4 matrix multiplication concurrently. There are many reasons for this; however, the most likely cause is the sample matrix is too small, causing the majority of the computation to be spent by the underlying OS forking a new process as opposed to the trivial multiplication of 4 numbers. Moreover, since the computation is non-blocking, the host machine would run slower if it has a single core since there would be additional overhead time by forking multiples processes and switching between them. However, since most modern machines have multiple cores, running a matrix multiplication concurrently would have a significant benefit (computable by Amdahl’s Law) if the matrix is sufficiently large.
+It is evident from the sample test that there is no benefit to executing a 4x4 matrix multiplication concurrently. There are many reasons for this; however, the most likely cause is the sample matrix is too small, causing the majority of the computation to be spent by the underlying OS forking a new process as opposed to the trivial multiplication of 4 numbers. Moreover, since the computation is non-blocking, the host machine would run slower if it has a single core since there would be overhead time caused by forking multiple processes and switching between them. However, since most modern machines have multiple cores, running a matrix multiplication concurrently would have a significant benefit (computable by Amdahl’s Law) if the matrix is sufficiently large.
 
 Sample output from the madatory test:
 ```
