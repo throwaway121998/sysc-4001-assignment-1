@@ -104,11 +104,9 @@ int main(int argc, const char * argv[]) {
         }
     }
     
-    /* Await child processes to exit. */
-    int status;
-    pid_t pid;
+    /* Wait child processes to exit. */
     while (n_processes > 0) {
-        pid = wait(&status);
+        wait(NULL);
         --n_processes;
     }
     
